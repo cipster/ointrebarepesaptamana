@@ -1,0 +1,39 @@
+<header id="login" class="bg-info text-center">
+    <a href="/" class="btn btn-success back-to-site"><i class="fa fa-long-arrow-left"></i>&nbsp;&Icirc;napoi la pagina de prezentare</a>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel">
+                    <div class="panel-heading">
+                        <h3 class="text-info">Intr&abreve;</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="/login" method="post" novalidate>
+                            <div class="row form-group">
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Adres&abreve; Email">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="password" name="password" placeholder="Parol&abreve;">
+                                    </div>
+
+                                    <span class="{{class}}">{{{message}}}</span>
+                                    <button type="submit" class="btn btn-primary btn-block">Intr&abreve;</button>
+                                </div>
+                            </div>
+
+                            <div class="row text-left">
+                                <div class="col-md-12">
+                                    <a href="/forgot-password">Ai uitat parola?</a><br>
+                                    <span class="text-info">Nu ai cont &icirc;nc&abreve;? <a href="/register">Creaz&abreve; unul aici!</a></span>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
