@@ -18,6 +18,15 @@ db.open(function () {
     db.collection('users', function (error, users) {
         db.users = users;
     });
+    db.collection('questions', function (error, questions) {
+        db.questions = questions;
+    });
+    db.collection('cities', function (error, cities) {
+        db.cities = cities;
+    });
+    db.collection('studii', function (error, studii) {
+        db.studii = studii;
+    });
 });
 
 module.exports = {

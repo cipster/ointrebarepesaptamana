@@ -16,11 +16,8 @@ router.post('/', function (req, res, next) {
     db.users.find({email: email, password: password})
         .toArray(function (err, items) {
             if (items.length > 0) {
-                var user = items[0];
-                res.render('main', {
-                    username: user.name || user.email,
-                    title: "O intrebare pe saptamana"
-                });
+                req.session.email = email;
+                res.redirect('main');
             } else {
                 res.render('login', {
                     class: "text-danger",

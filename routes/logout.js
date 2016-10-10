@@ -7,6 +7,7 @@ var pageObject = {
 
 /* GET logout page. */
 router.get('/', function (req, res, next) {
+    req.session.email = null;
     res.render('logout', pageObject);
 });
 

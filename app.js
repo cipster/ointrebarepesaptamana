@@ -5,13 +5,17 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-
 var routes = require('./routes/index');
 var mainPage = require('./routes/main');
 var login = require('./routes/login');
 var logout = require('./routes/logout');
 var forgotPassword = require('./routes/forgotPassword');
 var register = require('./routes/register');
+var profil = require('./routes/profil');
+var cities = require('./routes/cities');
+var studii = require('./routes/studii');
+var session = require('express-session');
+//var MongoStore = require('connect-mongo/es5')(session);
 
 var app = express();
 
@@ -38,6 +42,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret: "cucubau",
+    name: "O-Intrebare-Pe-Saptamana",
+    //store: MongoStore, // connect-mongo session store
+    proxy: true,
+    resave: true,
+    saveUninitialized: true
+}));
 
 app.use('/', routes);
 app.use('/main', mainPage);
@@ -45,6 +57,9 @@ app.use('/login', login);
 app.use('/log-out', logout);
 app.use('/forgot-password', forgotPassword);
 app.use('/register', register);
+app.use('/profil', profil);
+app.use('/cities', cities);
+app.use('/studii', studii);
 
 
 // catch 404 and forward to error handler

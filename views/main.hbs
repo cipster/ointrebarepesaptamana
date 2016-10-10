@@ -1,24 +1,64 @@
-
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<header class="bg-info">
     <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand"><span class="lead">O &Icirc;ntrebare pe S&abreve;pt&abreve;m&acirc;n&abreve;</span></a>
+
+        <!-- The justified navigation menu is meant for single line per list item.
+             Multiple lines will require custom code not provided by Bootstrap. -->
+        <div class="masthead">
+            <h3 class="text-primary">Salutare {{nume}}</h3>
+            <nav>
+                <ul id="main-nav" class="nav navbar-inverse nav-justified">
+                    <li><a href="/profil">Profil</a></li>
+                    <li><a href="/log-out">Ie&#x219;ire</a></li>
+                </ul>
+            </nav>
         </div>
-        <div id="navbar" class="navbar-collapse collapse">
-            <div style="color:white" class="navbar-form navbar-right">
-                Salutare {{username}}
-                <a ng-href="#/admin/{{activeSection}}"><i class="fa fa-cog fa-fw"></i> Administrare</a>
-                <a href="/log-out" class="btn btn-primary">Ie&#x219;ire</a>
+
+        <!-- Jumbotron -->
+        <div class="jumbotron bg-primary text-info">
+            <h1>Marketing stuff!</h1>
+
+            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet.</p>
+
+            <p><a class="btn btn-lg btn-success" href="#" role="button">Get started today</a></p>
+        </div>
+
+        <!-- Example row of columns -->
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Safari bug warning!</h2>
+
+                <p>As of v9.1.2, Safari exhibits a bug in which resizing your browser horizontally causes rendering errors in the justified nav that are cleared upon refreshing.</p>
+
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+                    malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem
+                    malesuada magna mollis euismod. Donec sed odio dui. </p>
+
+                <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
+            </div>
+            <div class="col-lg-4">
+                <h2>Heading</h2>
+
+                <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa.</p>
+
+                <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
             </div>
         </div>
-        <!--/.navbar-collapse -->
-    </div>
-</nav>
 
-<div class="container-fluid form-group"></div>
+        <!-- Site footer -->
+        <footer id="main-foot" class="footer">
+            <p>&copy; 2016 Rain-Software.</p>
+        </footer>
+
+    </div>
+    <!-- /container -->
+</header>
+<script src="js/service/notificationService.js"></script>
+<script src="js/main.js"></script>

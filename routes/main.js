@@ -1,14 +1,23 @@
 var express = require('express');
 var router = express.Router();
+var DbService = require('../bin/service/dbService');
+var db = DbService.db;
+var _ = require('underscore');
 
-/* GET main page. */
 router.get('/', function (req, res, next) {
-    var pageObject = {
-        username: "Ciprian",
-        title: 'O intrebare pe saptamana'
-    };
+    var email = req.session.email;
 
-    res.render('main', pageObject);
+    if (email) {
+        var user;
+        db.users.find({email: email}).toArray(function (err, items) {
+            if (items.length > 0) {
+                user = items[0];
+                res.render('main', _.extend({title: 'O intrebare pe saptamana'}, user));
+            }
+        });
+    } else {
+        res.redirect('/login');
+    }
 });
 
 module.exports = router;
